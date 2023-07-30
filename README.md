@@ -39,8 +39,10 @@ In this porject the requirement is to incrementally load a table from a transact
 </p>
 
 #### Project Demo 2
-In this project, the goal is to load data from files to a dstination database. For this purpose a python script is written to check if file is available. If file is available, then the script reads the flile, performs all the necessary data transformations. To load the data into database first the script truncates the stage table. Then it uses the **SQLAlchemy** library to load the data into stage table rather than using a curson **to_sql** function enahnces the load performance. Finally the script calls a stored procedure which then upserts the data from stage to the destination table. In an event of sucess the script then sends out an email to the stakeholders with number of records processed and load time. If process is aborted for any reason the failure notifications will also be emailed to the stakeholders. The ready python script is finally converted into an excutable file use pyinstaller. This executable file is scheduled to run on a daily basis at a specified time.
+In this project, the goal is to load data from files to a dstination database. For this purpose a python script is written to check if file is available. If file is available, then the script reads the flile, performs all the necessary data transformations. To load the data into database first the script truncates the stage table. Then it uses the **SQLAlchemy** library to load the data into stage table rather than using a cursor **to_sql** function enahnces the load performance. Finally the script calls a stored procedure which then upserts the data from stage to the destination table. After processing the data it archives the files to an archive folder. In event of a sucess the script then sends out an email to the stakeholders with number of records processed and load time. If process is aborted for any reason the failure notifications will also be emailed to the stakeholders. The ready python script is finally converted into an excutable file use pyinstaller. This executable file is scheduled to run on a daily basis at a specified time.
 
-
+<p align="center">
+<img src="https://github.com/skswar/Data_Engineering_Pipelines/blob/main/img/flowchart_2.png" width="60%"/>
+</p>
 
 
