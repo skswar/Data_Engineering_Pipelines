@@ -5,7 +5,7 @@
 </p>
 </div>
 
-<h3 align="center">How to build Efficient Data Enginnerg Pipeline at No Additional Software Overhead Cost?</h4>
+<h3 align="center">How to build Efficient Data Enginnering Pipelines at No Additional Software Overhead Cost?</h4>
 
 <hr>
 
