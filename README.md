@@ -12,6 +12,11 @@
 ## Table of contents
 * [Introduction](#introduction)
 * [Methodology](#methodology)
+  * [Tools Used](#tools-used)
+  * [Building the Pipelines](#building-the-pipelines)
+    * [Project Demo 1](#project-demo-1)
+    * [Project Demo 2](#project-demo-2) 
+* [Results and Conclusion](#results-and-conclusion)
 
 ## Introduction
 As the global business landscape is increasingly transitioning towards data-driven decision-making and artificial intelligence, the importance of gathering and structuring data in an organized manner is crucial for all organizations. With all the technologies available at our disposal building, data pipleines and data storage has become very easy and fast. But it is not always economically viable, especially for growing business and startups. Often, immediate investment in high-end software or cloud solutions might not be feasible. Or say, in some cases the workload might not warrant the need for large-scale software solutions and can be effectively handled with in house, open source tools. 
@@ -45,4 +50,12 @@ In this project, the goal is to load data from files to a dstination database. F
 <img src="https://github.com/skswar/Data_Engineering_Pipelines/blob/main/img/flowchart_2.png" width="60%"/>
 </p>
 
+**Link to Project files**:
+- Python File: [Load_Environmental_Data.ipynb](https://github.com/skswar/Data_Engineering_Pipelines/blob/main/project_demo_2/Load_Environmental_Data.ipynb)
+- SQL SP: [Load_Environmental_Data_SP.sql](https://github.com/skswar/Data_Engineering_Pipelines/blob/main/project_demo_2/Load_Environmental_Data_SP.sql)
+- Pyinstaller: [Pyinstaller.ipynb](https://github.com/skswar/Data_Engineering_Pipelines/blob/main/project_demo_2/Pyinstaller.ipynb)
 
+_Note_: How to use task scheduler can be found in the [img](https://github.com/skswar/Data_Engineering_Pipelines/blob/main/img/) folder with name task_schd_#
+
+## Results and Conclusion
+The result is smooth, low to no cost data pipelines which keeps the data flowing into a datalake/datamart or any data storage area which now can be used for data science and BI tasks. But we need to make sure this pipelines are scheduled by their dependency order. Also maintenance of this pipelines will be necessary and proactive actions might be needed if volume of the data sudenly increases to more than expected.
