@@ -32,11 +32,14 @@ In this project I have tried to implement two different types of data pipelines:
 2. One in which data is loaded from a file and upserted into a database table which is the [project_demo_2](https://github.com/skswar/Data_Engineering_Pipelines/blob/main/project_demo_2/).
 
 #### Project Demo 1
-In this porject the requirement is to incrementally load a table from a transactional datasource to a data-mart which is used for all data sciene and BI applicational needs. As both the sources lies under a same server therefore a stored procedure was written to move the data from source to destination. A stage table was created where data is first loaded, manipulated and then pused into the destination table. The results such as number of data loaded and load time is retured to python to email to the stakeholder about the status of the process upon execution.
+In this porject the requirement is to incrementally load a table from a transactional datasource to a data-mart which is used for all data sciene and BI applicational needs. As both the sources lies under a same server therefore a stored procedure was written to move the data from source to destination. A stage table was created where data is first loaded, manipulated and then pushed into the destination table. The python script is written to coonect to the database using pyodbc library and excute the stored procedure. In an event of sucess the script then sends out an email to the stakeholders with number of records processed and load time. If process is aborted for any reason the failure notifications will also be emailed to the stakeholders. The ready python script is finally converted into an excutable file use pyinstaller. This executable file is scheduled to run on a daily basis at a specified time.
 
 <p align="center">
 <img src="https://github.com/skswar/Data_Engineering_Pipelines/blob/main/img/flowchart_1.png" width="50%"/>
 </p>
+
+#### Project Demo 2
+In this project, the goal is to load data from files to a dstination database. For this purpose a python script is written to check if file is available. If file is available, then the script reads the flile, performs all the necessary data transformations. To load the data into database first the script truncates the stage table. Then it uses the **SQLAlchemy** library to load the data into stage table rather than using a curson **to_sql** function enahnces the load performance. Finally the script calls a stored procedure which then upserts the data from stage to the destination table. In an event of sucess the script then sends out an email to the stakeholders with number of records processed and load time. If process is aborted for any reason the failure notifications will also be emailed to the stakeholders. The ready python script is finally converted into an excutable file use pyinstaller. This executable file is scheduled to run on a daily basis at a specified time.
 
 
 
